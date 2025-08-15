@@ -38,20 +38,3 @@ Furthemore, the API supports several operators, which will be described in more 
 | `+` | Multivalues attribute |
 
 As can be seen, the `+` is used twice, but in different contexts, thereby removing any ambiguity.
-
-## Content
-
-The documentation is organized in the following sections:
-
-- [Data queries](data.md)
-- [Structure queries](structures.md)
-- [Reference metadata queries](metadata.md)
-- [Schema queries](schema.md)
-- [Availability queries](availability.md)
-- [Registration queries](registration.md)
-- [Query syntax for versions](querying_versions.md)
-- [Content-Negotiation](content_negotiation.md)
-- [Status codes](status.md)
-- [Structure maintenance](maintenance.md)
-- [Tips for providers and consumers](tips.md)
-- [Extending the API](extend.md)
