@@ -1,0 +1,15 @@
+site_name: SDMX REST API
+
+nav:
+  - REST API:
+    - rest_api/index.md
+    - Data queries: rest_api/data.md
+    - Structure queries: rest_api/structures.md
+    - Reference metadata queries: rest_api/metadata.md
+    - Schema queries: rest_api/schema.md
+    - Availability queries: rest_api/availability.md
+    - Content-Negotiation: rest_api/content_negotiation.md
+    - Status codes: rest_api/status.md
+    - Structure maintenance: rest_api/maintenance.md
+    - Tips for providers and consumers: rest_api/tips.md
+    - Extending the API: rest_api/extend.md
