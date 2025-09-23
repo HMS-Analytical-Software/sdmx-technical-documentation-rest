@@ -13,8 +13,9 @@ maintenance of the structural metadata required to drive these
 applications.
 
 ![](media/image7.jpg)
-
+/// caption
 Figure 4: Schematic of the Registry Content and Services
+///
 
 ## 4.2 Structural Metadata Repository
 
@@ -27,9 +28,8 @@ Structure Submission and Query Service.
 Note that the SDMX REST API supports all of the SDMX structural
 artefacts. The only structural artefacts that are not yet supported are:
 
--   Registration of data and metadata sources
-
--   Subscription and Notification
+- Registration of data and metadata sources
+- Subscription and Notification
 
 As of the initial version of SDMX 3.0 no messages are defined to support
 these artefacts; hence, users may need to use SDMX 2.1 Registry

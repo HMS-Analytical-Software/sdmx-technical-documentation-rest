@@ -4,31 +4,20 @@
 
 The Registry Interfaces are:
 
--   Notify Registry Event
-
--   Submit Subscription Request
-
--   Submit Subscription Response
-
--   Submit Registration Request
-
--   Submit Registration Response
-
--   Query Registration Request
-
--   Query Registration Response
-
--   Query Subscription Request
-
--   Query Subscription Response
+- Notify Registry Event
+- Submit Subscription Request
+- Submit Subscription Response
+- Submit Registration Request
+- Submit Registration Response
+- Query Registration Request
+- Query Registration Response
+- Query Subscription Request
+- Query Subscription Response
 
 The registry interfaces are invoked in one of two ways:
 
-1.  The interface is the name of the root node of the SDMX-ML document
-
-<!-- -->
-
-1.  The interface is invoked as a child element of the RegistryInterface
+1. The interface is the name of the root node of the SDMX-ML document
+2. The interface is invoked as a child element of the RegistryInterface
     message where the RegistryInterface is the root node of the SDMX-ML
     document.
 
@@ -75,78 +64,52 @@ to the SDMX REST API: <https://github.com/sdmx-twg/sdmx-rest>). The
 registry response to this query mechanism is the SDMX Structure message,
 which has as its root node:
 
--   Structure
+- Structure
 
 The SDMX structural artefacts that may be queried are:
 
--   data flows and metadata flows
-
--   data structure definitions and metadata structure definitions
-
--   code lists
-
--   value lists
-
--   concept schemes
-
--   reporting taxonomies
-
--   provision agreements and metadata provision agreements
-
--   structure maps
-
--   representation map
-
--   organisation scheme map
-
--   concept scheme map
-
--   category scheme map
-
--   reporting taxonomy map
-
--   processes
-
--   hierarchies
-
--   constraints
-
--   category schemes
-
--   categorisations and categorised objects (examples are categorised
+- data flows and metadata flows
+- data structure definitions and metadata structure definitions
+- code lists
+- value lists
+- concept schemes
+- reporting taxonomies
+- provision agreements and metadata provision agreements
+- structure maps
+- representation map
+- organisation scheme map
+- concept scheme map
+- category scheme map
+- reporting taxonomy map
+- processes
+- hierarchies
+- constraints
+- category schemes
+- categorisations and categorised objects (examples are categorised
     data flows and metadata flows, data structure definitions, metadata
     structure definitions, provision agreements registered data sources
     and metadata sources)
-
--   organisation schemes (agency scheme, data provider scheme, data
+- organisation schemes (agency scheme, data provider scheme, data
     consumer scheme, organisation unit scheme)
 
 Due to the VTL implementation the other structural metadata artefacts
 that may be queried are:
 
--   Transformation schemes
-
--   Custom type schemes
-
--   Name personalisation schemes
-
--   VTL mapping schemes
-
--   Ruleset schemes
-
--   User defined operator schemes
+- Transformation schemes
+- Custom type schemes
+- Name personalisation schemes
+- VTL mapping schemes
+- Ruleset schemes
+- User defined operator schemes
 
 ### 5.2.4 Data and Reference Metadata Registration Service 
 
 This service must implement the following Registry Interfaces:
 
--   SubmitRegistrationRequest
-
--   SubmitRegistrationResponse
-
--   QueryRegistrationRequest
-
--   QueryRegistrationResponse
+- SubmitRegistrationRequest
+- SubmitRegistrationResponse
+- QueryRegistrationRequest
+- QueryRegistrationResponse
 
 The Data and Metadata Registration Service allows SDMX conformant files
 and web-accessible databases containing published data and reference
@@ -161,30 +124,24 @@ called Constraints in the SDMX-IM.
 The Data and Metadata Registration Service MAY validate the following,
 subject to the access control mechanism implemented in the Registry:
 
--   that the data/metadata provider is allowed to register the dataset
+- that the data/metadata provider is allowed to register the dataset
     or metadataset;
-
--   that the content of the dataset or metadataset meets the validation
+- that the content of the dataset or metadataset meets the validation
     constraints. This is dependent upon such constraints being defined
     in the structural repository and which reference the relevant
     Dataflow, Metadataflow, Data Provider, Metadata Provider, Data
     Structure Definition, Metadata Structure Definition, Provision
     Agreement, Metadata Provision Agreement;
-
--   that a queryable data source exists – this would necessitate the
+- that a queryable data source exists – this would necessitate the
     registration service querying the service to determine its
     existence;
-
--   that a simple data source exists (i.e., a file accessible at a URL);
-
--   that the correct Data Structure Definition or Metadata Structure
+- that a simple data source exists (i.e., a file accessible at a URL);
+- that the correct Data Structure Definition or Metadata Structure
     Definition is used by the registered data;
-
--   that the components (Dimensions, Attributes, Measures, Metadata
+- that the components (Dimensions, Attributes, Measures, Metadata
     Attributes, etc.) are consistent with the Data Structure Definition
     or Metadata Structure Definition;
-
--   that the valid representations of the concepts to which these
+- that the valid representations of the concepts to which these
     components correspond conform to the definition in the Data
     Structure Definition or Metadata Structure Definition.
 
@@ -215,20 +172,17 @@ The indexing application behaviour is as follows:
 The Data and Metadata Discovery Service implements the following
 Registry Interfaces:
 
--   QueryRegistrationRequest
-
--   QueryRegistrationResponse
+- QueryRegistrationRequest
+- QueryRegistrationResponse
 
 ### 5.2.6 Subscription and Notification
 
 The Subscription and Notification Service implements the following
 Registry Interfaces:
 
--   SubmitSubscriptionRequest
-
--   SubmitSubscriptionResponse
-
--   NotifyRegistryEvent
+- SubmitSubscriptionRequest
+- SubmitSubscriptionResponse
+- NotifyRegistryEvent
 
 The data sharing paradigm relies upon the consumers of data and metadata
 being able to pull information from data providers’ dissemination
@@ -243,18 +197,15 @@ and notification.
 Subscription management involves a user submitting a subscription
 request which contains:
 
--   a query or constraint expression in terms of a filter which defines
+- a query or constraint expression in terms of a filter which defines
     the events for which the user is interested (e.g., new data for a
     specific dataflow, or for a domain category, or changes to a Data
     Structure Definition).
-
--   a list of URIs or endpoints to which an XML notification message can
+- a list of URIs or endpoints to which an XML notification message can
     be sent. Supported endpoint types will be email (mailto:) and HTTP
     POST (a normal http:// address);
-
--   request for a list of submitted subscriptions;
-
--   deletion of a subscription;
+- request for a list of submitted subscriptions;
+- deletion of a subscription;
 
 Notification requires that the structural metadata repository and the
 provisioning metadata repository monitor any event which is of interest
@@ -291,19 +242,13 @@ Artefacts must adhere to the Semantic Versioning rules.
 
 | <strong>Interface</strong> | <strong>Behaviour</strong> |
 | :--- | :--- |
-| All | <ol type="1"><br><li><p>If the action is set to “replace” (or a maintainable Artefact is<br>PUT or POSTed) then the entire contents of the existing maintainable<br>object in the Registry MUST be replaced by the object<br>submitted.</p></li><br><li><p>Cross referenced structures MUST exist in either the submitted<br>document (in Structures or Structure Location) or in the registry to<br>which the request is submitted.</p></li><br><li><p>If the action is set to “delete” (or a maintainable Artefact is<br>DELETEd) then the Registry MUST verify that the object can be deleted.<br>In order to qualify for deletion, the object must:</p><br><ol type="a"><br><li><p>Be a draft version.</p></li><br><li><p>Not be explicitly<a class="footnote-ref" href="#fn1" id="fnref1" role="doc-noteref"><sup>1</sup></a> referenced from any other object in<br>the Registry.</p></li><br></ol></li><br><li><p>The semantic versioning rules in the SDMX documentation MUST be<br>obeyed.</p></li><br></ol> |
+| All | <ol type="1"><br><li><p>If the action is set to “replace” (or a maintainable Artefact is<br>PUT or POSTed) then the entire contents of the existing maintainable<br>object in the Registry MUST be replaced by the object<br>submitted.</p></li><br><li><p>Cross referenced structures MUST exist in either the submitted<br>document (in Structures or Structure Location) or in the registry to<br>which the request is submitted.</p></li><br><li><p>If the action is set to “delete” (or a maintainable Artefact is<br>DELETEd) then the Registry MUST verify that the object can be deleted.<br>In order to qualify for deletion, the object must:</p><br><ol type="a"><br><li><p>Be a draft version.</p></li><br><li><p>Not be explicitly[^1] referenced from any other object in<br>the Registry.</p></li><br></ol></li><br><li><p>The semantic versioning rules in the SDMX documentation MUST be<br>obeyed.</p></li><br></ol> |
 | Structure submission | Structures are submitted at the level of the Maintainable Artefact<br>and the behaviour in “All” above is therefore at the level of the<br>Maintainable Artefact. |
 | SubmitRegistrationRequest | <p>If the datasource is a file (simple datasource) then the file MAY<br>be retrieved and indexed according to the Boolean attributes set in the<br>Registration.</p><br><p>For a queryable datasource the Registry MAY validate that the source<br>exists and can accept an SDMX data query.</p> |
 
-<aside id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>With semantic versioning, it is allowed to reference a
-range of artefacts, e.g., a DSD referencing a Codelist with version
-1.2.3+ means all patch versions greater than 1.2.3. This means that
-deleting 1.2.4-draft does not break integrity of the aforementioned
-DSD.<a href="#fnref1" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-</ol>
-</aside>
+[^1]:
+    With semantic versioning, it is allowed to reference a
+    range of artefacts, e.g., a DSD referencing a Codelist with version
+    1.2.3+ means all patch versions greater than 1.2.3. This means that
+    deleting 1.2.4-draft does not break integrity of the aforementioned
+    DSD.

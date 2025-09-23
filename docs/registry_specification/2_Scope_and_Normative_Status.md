@@ -1,4 +1,4 @@
-# Scope and Normative Status 
+# Scope and Normative Status
 
 The scope of this document is to specify the logical interfaces for the
 SDMX registry in terms of the functions required and the data that may
@@ -8,14 +8,11 @@ registry.
 In this document, functions and behaviours of the Registry Interfaces
 are described in four ways:
 
--   in text
-
--   with tables
-
--   with UML diagrams excerpted from the SDMX Information Model
+- in text
+- with tables
+- with UML diagrams excerpted from the SDMX Information Model
     (SDMX-IM)
-
--   with UML diagrams that are not a part of the SDMX-IM but are
+- with UML diagrams that are not a part of the SDMX-IM but are
     included here for clarity and to aid implementations (these diagrams
     are clearly marked as “Logical Class Diagram ...”)
 

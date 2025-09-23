@@ -1,4 +1,4 @@
-# Introduction 
+# Introduction
 
 The business vision for SDMX envisages the promotion of a “data sharing”
 model to facilitate low-cost, high-quality statistical data and metadata
@@ -6,14 +6,12 @@ exchange. Data sharing reduces the reporting burden of organisations by
 allowing them to publish data once and let their counterparties “pull”
 data and related metadata as required. The scenario is based on:
 
--   the availability of an abstract information model capable of
+- the availability of an abstract information model capable of
     supporting time series and cross-sectional data, structural
     metadata, and reference metadata (SDMX-IM)
-
--   standardised XML and JSON schemas for the SDMX-ML and SDMX-JSON
+- standardised XML and JSON schemas for the SDMX-ML and SDMX-JSON
     formats derived from the model (XSD, JSON)
-
--   the use of web-services technology (XML, JSON, Open API)
+- the use of web-services technology (XML, JSON, Open API)
 
 Such an architecture needs to be well organised, and the SDMX
 Registry/Repository (SDMX-RR) is tasked with providing structure,
@@ -55,11 +53,9 @@ and are aimed at enabling existing SDMX standards to achieve their
 mission. The architectural standards address registry services, which
 initially comprise:
 
--   structural metadata repository
-
--   data and metadata registration
-
--   query
+- structural metadata repository
+- data and metadata registration
+- query
 
 The registry services outlined in this specification are designed to
 help the SDMX community manage the proliferation of SDMX assets and to
