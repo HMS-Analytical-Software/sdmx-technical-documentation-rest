@@ -13,8 +13,8 @@ maintenance of the structural metadata required to drive these
 applications.
 
 ![](media/image7.jpg)
-/// caption
-Figure 4: Schematic of the Registry Content and Services
+///  figure-caption | 4
+Schematic of the Registry Content and Services
 ///
 
 ## 4.2 Structural Metadata Repository

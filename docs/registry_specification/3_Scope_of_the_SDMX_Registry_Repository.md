@@ -45,8 +45,8 @@ agencies:
     or Metadata Provision Agreement, respectively.
 
 ![](media/image4.png)
-/// caption
-Figure 1: Schematic of the Basic Structural Artefacts in the SDMX-IM
+/// figure-caption
+Schematic of the Basic Structural Artefacts in the SDMX-IM
 ///
 
 Note that in Figure 1 (but also most of the relevant subsequent figures)
@@ -78,8 +78,8 @@ for a Data/Metadata Provider:
     files or databases with one or more SDMX registries.
 
 ![](media/image5.png)
-/// caption
-Figure 2: Schematic of Registered Data and Metadata Sources in the
+/// figure-caption
+Schematic of Registered Data and Metadata Sources in the
 SDMX-IM
 ///
 
@@ -113,7 +113,7 @@ resource:
     metadata from the supplied URLs.
 
 ![](media/image6.png)
-/// caption
-Figure 3: Schematic of Data and Metadata Discovery and Query in the
+///  figure-caption
+Schematic of Data and Metadata Discovery and Query in the
 SDMX-IM
 ///
