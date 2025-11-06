@@ -1,6 +1,6 @@
-# 5 Registry Interfaces and Services
+# Registry Interfaces and Services
 
-## 5.1 Registry Interfaces
+## Registry Interfaces
 
 The Registry Interfaces are:
 
@@ -23,7 +23,8 @@ The registry interfaces are invoked in one of two ways:
 
 In addition to these interfaces the registry must support a mechanism
 for submitting and querying for structural metadata. This is detailed in
-sections 5.2.2 and 5.2.3.
+Sections [Structure Submission Service](#structure-submission-service) and 
+[Structure Query Service](#structure-query-service).
 
 All these interactions with the Registry – with the exception of
 NotifyRegistryEvent – are designed in pairs. The first document, the one
@@ -36,35 +37,39 @@ the SDMX-RR to all subscribers whenever an even occurs to which any
 users have subscribed. Thus, it does not conform to the request-response
 pattern, because it is inherently asynchronous.
 
-## 5.2 Registry Services
+## Registry Services
 
-### 5.2.1 Introduction
+### Introduction
 
 The services described in this section do not imply that each is
 implemented as a discrete web service.
 
-### 5.2.2 Structure Submission Service
+### Structure Submission Service
 
 The registry must support a mechanism for submitting structural
 metadata. This mechanism can be the SDMX REST interface for structural
-metadata (this is defined in the corresponding GitHub project, dedicated
-to the SDMX REST API: <https://github.com/sdmx-twg/sdmx-rest>). In order
+metadata (this is defined in the 
+[corresponding GitHub project](https://github.com/sdmx-twg/sdmx-rest)
+and the dedicated Section on the 
+[SDMX REST API](../../sdmx-rest-api/rest_api/index.md)). In order
 for the architecture to be scalable, the finest-grained piece of
 structural metadata that can be processed by the SDMX-RR is a
 MaintainableArtefact, with the exception of Item Schemes, where changes
 at an Item level is also possible (see next section on the SDMX
 Information Model).
 
-### 5.2.3 Structure Query Service 
+### Structure Query Service 
 
 The registry must support a mechanism for querying for structural
 metadata. This mechanism can be the SDMX REST interface for structural
-metadata (this is defined in the corresponding GitHub project, dedicated
-to the SDMX REST API: <https://github.com/sdmx-twg/sdmx-rest>). The
+metadata (this is defined in the 
+[corresponding GitHub project](https://github.com/sdmx-twg/sdmx-rest)
+and the dedicated Section on the 
+[SDMX REST API](../../sdmx-rest-api/rest_api/index.md)). The
 registry response to this query mechanism is the SDMX Structure message,
 which has as its root node:
 
-- Structure
+- `Structure`
 
 The SDMX structural artefacts that may be queried are:
 
@@ -102,14 +107,14 @@ that may be queried are:
 - Ruleset schemes
 - User defined operator schemes
 
-### 5.2.4 Data and Reference Metadata Registration Service 
+### Data and Reference Metadata Registration Service 
 
 This service must implement the following Registry Interfaces:
 
-- SubmitRegistrationRequest
-- SubmitRegistrationResponse
-- QueryRegistrationRequest
-- QueryRegistrationResponse
+- `SubmitRegistrationRequest`
+- `SubmitRegistrationResponse`
+- `QueryRegistrationRequest`
+- `QueryRegistrationResponse`
 
 The Data and Metadata Registration Service allows SDMX conformant files
 and web-accessible databases containing published data and reference
@@ -148,11 +153,11 @@ subject to the access control mechanism implemented in the Registry:
 The Registration has an action attribute which takes one of the
 following values:
 
-| <strong>Action Attribute Value</strong> | <strong>Behaviour</strong> |
+| Action Attribute Value | Behaviour |
 | :--- | :--- |
-| Append | Add this registration to the registry |
-| Replace | Replace the existing Registration with this Registration identified<br>by the id in the Registration of the Submit Registration Request |
-| Delete | Delete the existing Registration identified by the id in the<br>Registration of the Submit Registration Request |
+| `Append` | Add this registration to the registry |
+| `Replace` | Replace the existing registration with this registration identified by the `id` in the registration of the submit registration request |
+| `Delete` | Delete the existing registration identified by the `id` in the registration of the submit registration request |
 
 
 The Registration has three Boolean attributes which may be present to
@@ -160,29 +165,30 @@ determine how an SDMX compliant dataset or metadataset indexing
 application must index the datasets or metadatasets upon registration.
 The indexing application behaviour is as follows:
 
-| <strong>Boolean Attribute</strong> | <strong>Behaviour if Value is “true”</strong> |
+| Boolean Attribute | Behaviour if Value is `true` |
 | :--- | :--- |
-| indexTimeSeries | A compliant indexing application must index all the time series keys<br>(for a Dataset registration) or metadata target values (for a<br>Metadataset registration) |
-| indexDataSet | <p>A compliant indexing application must index the range of actual<br>(present) values for each dimension of the Dataset (for a Dataset<br>registration) or the range of actual (present) values for each Metadata<br>Attribute which takes an enumerated value.</p><br><p>Note that for data this requires much less storage than full key<br>indexing, but this method cannot guarantee that a specific combination<br>of Dimension values (the Key) is actually present in the<br>Dataset</p> |
-| indexReportingPeriod | A compliant indexing application must index the time period range(s)<br>for which data are present in the Dataset. The validity period of the<br>Metadatasets may also be indexed. |
+| `indexTimeSeries` | A compliant indexing application must index all the time series keys (for a Dataset registration) or metadata target values (for a Metadataset registration). |
+| `indexDataSet` | A compliant indexing application must index the range of actual (present) values for each dimension of the Dataset (for a Dataset registration) or the range of actual (present) values for each Metadata Attribute which takes an enumerated value.  
+Note that for data this requires much less storage than full key indexing, but this method cannot guarantee that a specific combination of Dimension values (the Key) is actually present in the Dataset. |
+| `indexReportingPeriod` | A compliant indexing application must index the time period range(s) for which data are present in the Dataset. The validity period of the Metadatasets may also be indexed. |
 
 
-### 5.2.5 Data and Reference Metadata Discovery
+### Data and Reference Metadata Discovery
 
 The Data and Metadata Discovery Service implements the following
 Registry Interfaces:
 
-- QueryRegistrationRequest
-- QueryRegistrationResponse
+- `QueryRegistrationRequest`
+- `QueryRegistrationResponse`
 
-### 5.2.6 Subscription and Notification
+### Subscription and Notification
 
 The Subscription and Notification Service implements the following
 Registry Interfaces:
 
-- SubmitSubscriptionRequest
-- SubmitSubscriptionResponse
-- NotifyRegistryEvent
+- `SubmitSubscriptionRequest`
+- `SubmitSubscriptionResponse`
+- `NotifyRegistryEvent`
 
 The data sharing paradigm relies upon the consumers of data and metadata
 being able to pull information from data providers’ dissemination
@@ -213,7 +219,7 @@ to a user (the object of a subscription request query), and to issue an
 SDMX notification document to the endpoints specified in the relevant
 subscriptions.
 
-### 5.2.7 Registry Behaviour
+### Registry Behaviour
 
 The following table defines the behaviour of the SDMX Registry for the
 various Registry Interface messages. It should be noted, though, that as
@@ -237,14 +243,14 @@ versioning and replacing or maintaining semantically versioned Artefacts
 applies to externally shared Artefacts. This means that any system may
 internally perform any change within a version of an Artefact, until the
 latter is shared outside of that system or becomes public. Then (as also
-explained in the SDMX Standards Section 6 “Technical Notes”) the
+explained in the SDMX Standards Section [Technical Notes](../../technical_notes/technical_notes/0_Purpose_and_Structure.md)) the
 Artefacts must adhere to the Semantic Versioning rules.
 
-| <strong>Interface</strong> | <strong>Behaviour</strong> |
+| Interface | Behaviour |
 | :--- | :--- |
-| All | <ol type="1"><br><li><p>If the action is set to “replace” (or a maintainable Artefact is<br>PUT or POSTed) then the entire contents of the existing maintainable<br>object in the Registry MUST be replaced by the object<br>submitted.</p></li><br><li><p>Cross referenced structures MUST exist in either the submitted<br>document (in Structures or Structure Location) or in the registry to<br>which the request is submitted.</p></li><br><li><p>If the action is set to “delete” (or a maintainable Artefact is<br>DELETEd) then the Registry MUST verify that the object can be deleted.<br>In order to qualify for deletion, the object must:</p><br><ol type="a"><br><li><p>Be a draft version.</p></li><br><li><p>Not be explicitly[^1] referenced from any other object in<br>the Registry.</p></li><br></ol></li><br><li><p>The semantic versioning rules in the SDMX documentation MUST be<br>obeyed.</p></li><br></ol> |
-| Structure submission | Structures are submitted at the level of the Maintainable Artefact<br>and the behaviour in “All” above is therefore at the level of the<br>Maintainable Artefact. |
-| SubmitRegistrationRequest | <p>If the datasource is a file (simple datasource) then the file MAY<br>be retrieved and indexed according to the Boolean attributes set in the<br>Registration.</p><br><p>For a queryable datasource the Registry MAY validate that the source<br>exists and can accept an SDMX data query.</p> |
+| All | 1. If the action is set to `replace` (or a maintainable artefact is PUT or POSTed) then the entire contents of the existing maintainable object in the registry **must** be replaced by the object submitted. <br> 2. Cross referenced structures **must** exist in either the submitted document (in `Structures` or `StructureLocation`) or in the registry to which the request is submitted. <br> 3. If the action is set to `delete` (or a maintainable artefact is DELETEd) then the registry **must** verify that the object can be deleted. In order to qualify for deletion, the object must: <br> <div style="margin-left:20px;">a. Be a draft version.</div><br> <div style="margin-left:20px;">b. Not be explicitly[^1] referenced from any other object in the registry.</div><br> 4. The semantic versioning rules in the SDMX documentation **must** be obeyed. |
+| Structure submission | Structures are submitted at the level of the Maintainable Artefact and the behaviour in "All" above is therefore at the level of the Maintainable Artefact. |
+| `SubmitRegistrationRequest` | If the datasource is a file (simple datasource) then the file *may* be retrieved and indexed according to the Boolean attributes set in the registration. <br>For a queryable datasource the registry *may* validate that the source exists and can accept an SDMX data query. |
 
 [^1]:
     With semantic versioning, it is allowed to reference a

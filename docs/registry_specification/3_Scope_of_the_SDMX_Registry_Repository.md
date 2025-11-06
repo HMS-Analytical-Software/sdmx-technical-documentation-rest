@@ -1,6 +1,6 @@
-# 3 Scope of the SDMX Registry/Repository
+# Scope of the SDMX Registry/Repository
 
-## 3.1 Objective
+## Objective
 
 The objective of the SDMX registry/repository is, in broad terms, to
 allow organisations to publish statistical data and reference metadata
@@ -18,7 +18,7 @@ doing this is twofold:
     reference metadata dissemination by implementing the data sharing
     vision of SDMX.
 
-## 3.2 Structural Metadata 
+## Structural Metadata 
 
 Setting up structural metadata and the exchange context (referred to as
 “data provisioning”) involves the following steps for maintenance
@@ -63,7 +63,7 @@ terms that include both data and metadata have been used. For example:
 
 In that context, the term “Metadata” refers to reference metadata.
 
-## 3.3 Registration
+## Registration
 
 Publishing the data and reference metadata involves the following steps
 for a Data/Metadata Provider:
@@ -83,7 +83,7 @@ Schematic of Registered Data and Metadata Sources in the
 SDMX-IM
 ///
 
-## 3.4 Notification
+## Notification
 
 Notifying interested parties of newly published or re-published data,
 reference metadata or changes in structural metadata involves:
@@ -92,7 +92,7 @@ reference metadata or changes in structural metadata involves:
     sends an email or notifies an HTTP address announcing all published
     data that meets the criteria contained in the subscription request.
 
-## 3.5 Discovery
+## Discovery
 
 Discovering published data and reference metadata involves interaction
 with the registry to fulfil the following logical steps that would be

@@ -1,6 +1,6 @@
-# 4 SDMX Registry/Repository Architecture
+# SDMX Registry/Repository Architecture
 
-## 4.1 Architectural Schematic
+## Architectural Schematic
 
 The architecture of the SDMX registry/repository is derived from the
 objectives stated above. It is a layered architecture that is founded by
@@ -17,7 +17,7 @@ applications.
 Schematic of the Registry Content and Services
 ///
 
-## 4.2 Structural Metadata Repository
+## Structural Metadata Repository
 
 The basic layer is that of a structural metadata service which supports
 the lifecycle of SDMX structural metadata artefacts such as Maintenance
@@ -35,7 +35,7 @@ As of the initial version of SDMX 3.0 no messages are defined to support
 these artefacts; hence, users may need to use SDMX 2.1 Registry
 Interface messages, instead.
 
-## 4.3 Provisioning Metadata Repository
+## Provisioning Metadata Repository
 
 The function of this repository is to support the definition of the
 structural metadata that describes the various types of data-store which
