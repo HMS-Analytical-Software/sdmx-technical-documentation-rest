@@ -1,4 +1,4 @@
-site_name: SDMX Registry Specification
+site_name: registry_specification
 
 nav:
     - registry_specification/1_Introduction.md

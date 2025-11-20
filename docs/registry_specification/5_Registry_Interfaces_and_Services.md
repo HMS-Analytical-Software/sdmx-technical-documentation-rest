@@ -51,7 +51,7 @@ metadata. This mechanism can be the SDMX REST interface for structural
 metadata (this is defined in the 
 [corresponding GitHub project](https://github.com/sdmx-twg/sdmx-rest)
 and the dedicated Section on the 
-[SDMX REST API](../../sdmx-rest-api/rest_api/index.md)). In order
+[SDMX REST API](../../rest_api/rest_api/index.md)). In order
 for the architecture to be scalable, the finest-grained piece of
 structural metadata that can be processed by the SDMX-RR is a
 MaintainableArtefact, with the exception of Item Schemes, where changes
@@ -65,7 +65,7 @@ metadata. This mechanism can be the SDMX REST interface for structural
 metadata (this is defined in the 
 [corresponding GitHub project](https://github.com/sdmx-twg/sdmx-rest)
 and the dedicated Section on the 
-[SDMX REST API](../../sdmx-rest-api/rest_api/index.md)). The
+[SDMX REST API](../../rest_api/rest_api/index.md)). The
 registry response to this query mechanism is the SDMX Structure message,
 which has as its root node:
 

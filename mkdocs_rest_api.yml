@@ -1,4 +1,4 @@
-site_name: SDMX REST API
+site_name: rest_api
 
 nav:
   - REST API:
