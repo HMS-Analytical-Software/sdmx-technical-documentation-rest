@@ -71,41 +71,11 @@ which has as its root node:
 
 - `Structure`
 
-The SDMX structural artefacts that may be queried are:
+The SDMX structural artefacts that may be queried are defined in the
+[SDMX structure web service specification](https://github.com/sdmx-twg/sdmx-rest/blob/master/doc/structures.md)
+which is compatible with this release of the standard.
 
-- data flows and metadata flows
-- data structure definitions and metadata structure definitions
-- code lists
-- value lists
-- concept schemes
-- reporting taxonomies
-- provision agreements and metadata provision agreements
-- structure maps
-- representation map
-- organisation scheme map
-- concept scheme map
-- category scheme map
-- reporting taxonomy map
-- processes
-- hierarchies
-- constraints
-- category schemes
-- categorisations and categorised objects (examples are categorised
-    data flows and metadata flows, data structure definitions, metadata
-    structure definitions, provision agreements registered data sources
-    and metadata sources)
-- organisation schemes (agency scheme, data provider scheme, data
-    consumer scheme, organisation unit scheme)
 
-Due to the VTL implementation the other structural metadata artefacts
-that may be queried are:
-
-- Transformation schemes
-- Custom type schemes
-- Name personalisation schemes
-- VTL mapping schemes
-- Ruleset schemes
-- User defined operator schemes
 
 ### Data and Reference Metadata Registration Service 
 
@@ -116,7 +86,7 @@ This service must implement the following Registry Interfaces:
 - `QueryRegistrationRequest`
 - `QueryRegistrationResponse`
 
-The Data and Metadata Registration Service allows SDMX conformant files
+The Data Registration Service allows SDMX conformant files
 and web-accessible databases containing published data and reference
 metadata to be registered in the SDMX Registry. The registration process
 MAY validate the content of the datasets or metadata-sets, and MAY
@@ -126,7 +96,7 @@ attribute), or entire keys, and storing this as a record in the registry
 to enable discovery of the original dataset or metadata-set. These are
 called Constraints in the SDMX-IM.
 
-The Data and Metadata Registration Service MAY validate the following,
+The Data Registration Service MAY validate the following,
 subject to the access control mechanism implemented in the Registry:
 
 - that the data/metadata provider is allowed to register the dataset
@@ -141,14 +111,12 @@ subject to the access control mechanism implemented in the Registry:
     registration service querying the service to determine its
     existence;
 - that a simple data source exists (i.e., a file accessible at a URL);
-- that the correct Data Structure Definition or Metadata Structure
-    Definition is used by the registered data;
-- that the components (Dimensions, Attributes, Measures, Metadata
-    Attributes, etc.) are consistent with the Data Structure Definition
-    or Metadata Structure Definition;
+- that the correct Data Structure Definition is used by the registered data;
+- that the components (Dimensions, Attributes, Measures) are consistent
+    with the Data Structure Definition;
 - that the valid representations of the concepts to which these
     components correspond conform to the definition in the Data
-    Structure Definition or Metadata Structure Definition.
+    Structure Definition.
 
 The Registration has an action attribute which takes one of the
 following values:
@@ -167,15 +135,14 @@ The indexing application behaviour is as follows:
 
 | Boolean Attribute | Behaviour if Value is `true` |
 | :--- | :--- |
-| `indexTimeSeries` | A compliant indexing application must index all the time series keys (for a Dataset registration) or metadata target values (for a Metadataset registration). |
-| `indexDataSet` | A compliant indexing application must index the range of actual (present) values for each dimension of the Dataset (for a Dataset registration) or the range of actual (present) values for each Metadata Attribute which takes an enumerated value.  
-Note that for data this requires much less storage than full key indexing, but this method cannot guarantee that a specific combination of Dimension values (the Key) is actually present in the Dataset. |
-| `indexReportingPeriod` | A compliant indexing application must index the time period range(s) for which data are present in the Dataset. The validity period of the Metadatasets may also be indexed. |
+| `indexTimeSeries` | A compliant indexing application must index all the time series keys|
+| `indexDataSet` | A compliant indexing application must index the range of actual (present) values for each dimension of the Dataset. Note that for data this requires much less storage than full key indexing, but this method cannot guarantee that a specific combination of Dimension values (the Key) is actually present in the Dataset. |
+| `indexReportingPeriod` | A compliant indexing application must index the time period range(s) for which data are present in the Dataset. |
 
 
-### Data and Reference Metadata Discovery
+### Data Discovery
 
-The Data and Metadata Discovery Service implements the following
+The Data Discovery Service implements the following
 Registry Interfaces:
 
 - `QueryRegistrationRequest`
@@ -195,8 +162,8 @@ being able to pull information from data providers’ dissemination
 systems. For this to work efficiently, a data consumer needs to know
 when to pull data, i.e., when something has changed in the registry
 (e.g., a dataset has been updated and re-registered). Additionally, SDMX
-systems may also want to know if a new Data Structure Definition, Code
-List or Metadata Structure Definition has been added. The Subscription
+systems may also want to know if a new Data Structure Definition, or Code
+List has been added. The Subscription
 and Notification Service comprises two parts: subscription management,
 and notification.
 

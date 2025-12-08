@@ -26,7 +26,7 @@ provide support for data and metadata reporting/collection, and
 dissemination scenarios.
 
 Standard formats for the exchange of aggregated statistical data and
-metadata as prescribed in SDMX v3.0 are envisaged to bring benefits to
+metadata as prescribed in SDMX v3.1 are envisaged to bring benefits to
 the statistical community because data reporting and dissemination
 processes can be made more efficient.
 
