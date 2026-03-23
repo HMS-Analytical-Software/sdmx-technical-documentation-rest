@@ -8,6 +8,8 @@ nav:
     - Reference metadata queries: rest_api/metadata.md
     - Schema queries: rest_api/schema.md
     - Availability queries: rest_api/availability.md
+    - Registration queries: rest_api/registration.md
+    - Query syntax for versions: rest_api/querying_versions.md
     - Content-Negotiation: rest_api/content_negotiation.md
     - Status codes: rest_api/status.md
     - Structure maintenance: rest_api/maintenance.md
